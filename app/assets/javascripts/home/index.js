@@ -17,7 +17,7 @@ function addLink (event) {
     var $tr = $('<tr />')
     $tr.append($('<td />').text(data.title))
     $tr.append($('<td />').text(data.url))
-    $tr.append($('<td />').text(data.read))
+    $tr.append($('<td />').text(data.read)).addClass('read-status')
     $('#all-links').prepend($tr)
     $('input[type = "submit"]').removeAttr('disabled')
     $('#new-link form')[0].reset()

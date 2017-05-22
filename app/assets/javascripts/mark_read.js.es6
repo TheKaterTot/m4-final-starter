@@ -1,23 +1,22 @@
-$( document ).ready(function(){
-  $("body").on("click", ".mark-as-read", markAsRead)
+$(document).ready(function (){
+  $('body').on('click', '.mark-as-read', markAsRead)
 })
 
-function markAsRead(e) {
-  e.preventDefault();
+function markAsRead (e) {
+  e.preventDefault()
 
-  var $link = $(this).parents('.link');
-  var linkId = $link.data('link-id');
+  var linkId = $(this).parent().data('link-id')
 
   $.ajax({
-    type: "PATCH",
-    url: "/api/v1/links/" + linkId,
-    data: { read: true },
+    type: 'PATCH',
+    url: '/api/v1/links/' + linkId,
+    data: { read: true }
   }).then(updateLinkStatus)
-    .fail(displayFailure);
+    .fail(displayFailure)
 }
 
-function updateLinkStatus(link) {
-  $(`.link[data-link-id=${link.id}]`).find(".read-status").text(link.read);
+function updateLinkStatus (link) {
+  $(`.read-status[data-link-id=${link.id}]`).text(link.read)
 }
 
 function displayFailure(failureData){
