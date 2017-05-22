@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: "links#index"
   get '/login', to: "sessions#new"
+  post '/login', to: "sessions#create"
+  delete '/logout', to: "sessions#destroy"
 
   resources :links, only: [:index]
   resources :users, only: [:new, :create]

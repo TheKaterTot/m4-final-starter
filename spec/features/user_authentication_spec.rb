@@ -46,10 +46,10 @@ feature "user authentication" do
 
     click_on("Create Account")
 
-    expect(find(".flash")).to have_content("Email has already been taken")
+    expect(find(".errors")).to have_content("Email has already been taken")
   end
 
-  scenario "user password and password confirmation do not match" do
+  scenario "guest password and password confirmation do not match" do
     user = Fabricate(:user)
 
     visit new_user_path
@@ -64,10 +64,10 @@ feature "user authentication" do
 
     click_on("Create Account")
 
-    expect(find(".flash")).to have_content("Password confirmation doesn't match Password" )
+    expect(find(".errors")).to have_content("Password confirmation doesn't match Password" )
   end
 
-  scenario "user must include email and password" do
+  scenario "guest must sign up with email and password" do
 
     visit new_user_path
 
@@ -81,6 +81,38 @@ feature "user authentication" do
 
     click_on("Create Account")
 
-    expect(find(".flash")).to have_content("Email can't be blank")
+    expect(find(".errors")).to have_content("Email can't be blank")
+  end
+
+  scenario "guest signs in to preexisting account" do
+    user = Fabricate(:user)
+
+    visit login_path
+
+    fill_in("Email", with: user.email)
+    fill_in("Password", with: user.password)
+
+    click_on("Log In")
+
+    expect(current_path).to eq(root_path)
+
+    expect(find(".flash")).to have_content("Successfully logged in!")
+
+    within(".user-info") do
+      expect(page).to have_link("Sign out")
+    end
+  end
+
+  scenario "guest signs out of account" do
+    user = Fabricate(:user)
+    login(user)
+
+    expect(current_path).to eq(root_path)
+
+    within(".user-info") do
+      click_on("Sign out")
+    end
+
+    expect(current_path).to eq(login_path)
   end
 end

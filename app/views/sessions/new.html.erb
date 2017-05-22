@@ -1,13 +1,13 @@
 <h1>Welcome to URLockbox</h1>
 
 <div id="login">
-  <span>Sign In</span>
+  <h3>Sign In</h3>
   <%= form_for :session, url: login_path do |f| %>
     <%=  f.label :email %>
     <%=  f.text_field :email%>
     <%=  f.label :password %>
     <%=  f.password_field :password %>
-    <%= f.submit "Login" %>
+    <%= f.submit "Log In" %>
   <% end %>
 
   <p>New user?</p>
