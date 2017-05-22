@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   validates :password, presence: true
   validates :password_confirmation, presence: true
   validates_confirmation_of :password, on: :create
+  has_many :links
 end

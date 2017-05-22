@@ -2,3 +2,26 @@
 <div class="user-info">
   <%= link_to "Sign out", logout_path, method: :delete %>
 </div>
+
+<div id="new-link">
+  <%= form_for @link, url: "#" do |f| %>
+  <%= render partial: "shared/errors", locals: { target: @link } %>
+    <%=  f.label :url %>
+    <%=  f.text_field :url %>
+    <%=  f.label :title %>
+    <%=  f.text_field :title %>
+    <%= f.submit "Add Link" %>
+  <% end %>
+</div>
+
+<table id="all-links">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>URL</th>
+      <th>Read</th>
+    </tr>
+  </thead>
+  <tbody class="links">
+  </tbody>
+</table>
