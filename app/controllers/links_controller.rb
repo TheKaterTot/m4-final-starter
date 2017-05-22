@@ -2,6 +2,7 @@ class LinksController < ApplicationController
   before_action :require_login
   def index
     @link = Link.new
+    @links = Link.all
   end
 
   def create
@@ -9,7 +10,7 @@ class LinksController < ApplicationController
     if link.save
       render json: link
     else
-      head 405
+      render json: {error: link.errors, status: 405 }
     end
   end
 
