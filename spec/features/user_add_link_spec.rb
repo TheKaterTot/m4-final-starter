@@ -9,7 +9,7 @@ describe "user can add links from homepage", :js => true do
     within("#new-link") do
       fill_in("Url", with: "http://google.com")
       fill_in("Title", with: "google")
-      click_on("Add Link")
+      click_on("Save")
     end
 
     within(".links") do
@@ -23,7 +23,7 @@ describe "user can add links from homepage", :js => true do
     within("#new-link") do
       fill_in("Url", with: "nogood")
       fill_in("Title", with: "No")
-      click_on("Add Link")
+      click_on("Save")
     end
 
     within(".links") do
