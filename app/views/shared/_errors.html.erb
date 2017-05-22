@@ -1,6 +1,6 @@
 <% if target.errors.any? %>
 <ul class = "errors">
-  <%= target.errors.full_messages.uniq.each do |message| %>
+  <%= target.errors.full_messages.each do |message| %>
   <p><li><%= message %></li></p>
   <% end %>
 </ul>

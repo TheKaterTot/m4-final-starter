@@ -19,6 +19,7 @@ function addLink (event) {
     $tr.append($('<td />').text(data.url))
     $tr.append($('<td />').text(data.read))
     $('#all-links').prepend($tr)
+    $('input[type = "submit"]').removeAttr('disabled')
     $('#new-link form')[0].reset()
   })
 }
