@@ -4,6 +4,7 @@ class LinksController < ApplicationController
   def index
     @link = Link.new
     @links = current_user.links
+    @hot_links = HotLinksService.get_hot_links
   end
 
   def create

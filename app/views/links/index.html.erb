@@ -43,6 +43,11 @@
           <td data-link-id="<%= link.id %>"><button class="mark-as-unread no-search">Mark As Unread</button></td>
         <% end %>
         <td><%= link_to "Edit", edit_link_path(link.id) %></td>
+        <% if link.url == @hot_links[0] %>
+        <td>Top Link</td>
+        <% elsif @hot_links.include?(link.url) %>
+        <td>HOT</td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
