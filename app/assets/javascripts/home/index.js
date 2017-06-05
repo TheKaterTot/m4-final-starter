@@ -30,17 +30,17 @@ function addLink (event) {
 }
 
 function searchLinks() {
-  let $links = $('#all-links .links')
-  let search = $('#link-search').val().toLowerCase()
+  var $links = $('#all-links .links')
+  var search = $('#link-search').val().toLowerCase()
   $links.find('tr').hide()
   if (search == '') {
     $links.find('tr').show()
   }
 
-  let $tds = $links.find('tr td.title, tr td.url')
+  var $tds = $links.find('tr td.title, tr td.url')
 
   $tds.each(function (index, td) {
-    let $td = $(td)
+    var $td = $(td)
     if ($td.text().toLowerCase().includes(search)) {
       $td.parent().show()
     }
@@ -48,12 +48,12 @@ function searchLinks() {
 }
 
 function showRead() {
-  let $links = $('#all-links .links')
+  var $links = $('#all-links .links')
   $links.find('tr').hide()
   $links.find('tr.read').show()
 }
 
 function showUnread() {
-  let $links = $('#all-links .links')
+  var $links = $('#all-links .links')
   $links.find('tr.read').hide()
 }
