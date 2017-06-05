@@ -23,13 +23,17 @@
   </thead>
   <tbody class="links">
     <% @links.each do |link| %>
-      <tr id="link-<%= link.id %>">
-        <td><%= link.title %></td>
-        <td><%= link.url %></td>
-        <td data-link-id="<%= link.id %>" class="read-status"><%= link.read %></td>
-        <% if link.read == false %>
+      <% if link.read == false %>
+        <tr id="link-<%= link.id %>">
+          <td><%= link.title %></td>
+          <td><%= link.url %></td>
+          <td data-link-id="<%= link.id %>" class="read-status"><%= link.read %></td>
           <td data-link-id="<%= link.id %>"><button class="mark-as-read">Mark As Read</button></td>
-        <% else %>
+      <% else %>
+        <tr class="read" id="link-<%= link.id %>">
+          <td><%= link.title %></td>
+          <td><%= link.url %></td>
+          <td data-link-id="<%= link.id %>" class="read-status"><%= link.read %></td>
           <td data-link-id="<%= link.id %>"><button class="mark-as-unread">Mark As Unread</button></td>
         <% end %>
         <td><%= link_to "Edit", edit_link_path(link.id) %></td>

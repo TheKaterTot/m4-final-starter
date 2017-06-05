@@ -33,8 +33,10 @@ function updateLinkStatus (link) {
   $(`.read-status[data-link-id=${link.id}]`).text(link.read)
   if (link.read == true) {
     $(`td[data-link-id=${link.id}] .mark-as-read`).text('Mark As Unread').removeClass('mark-as-read').addClass('mark-as-unread')
+    $(`tr#link-${link.id}`).addClass('read')
   } else {
     $(`td[data-link-id=${link.id}] .mark-as-unread`).text('Mark As Read').removeClass('mark-as-unread').addClass('mark-as-read')
+    $(`tr#link-${link.id}`).removeClass('read')
   }
 
 }
