@@ -2,7 +2,7 @@
 <div class="user-info pull-right">
   <%= link_to "Sign out", logout_path, method: :delete %>
 </div>
-
+<h3>Add A New Link</h3>
 <div id="new-link">
   <%= form_for @link, url: "#" do |f| %>
     <%=  f.label :url %>
@@ -12,6 +12,9 @@
     <%= f.submit "Save" %>
   <% end %>
 </div>
+
+<h3>Search Links</h3>
+<input type="text" id="link-search" name="search" placeholder="Search By Title or URL">
 
 <table class="table" id="all-links">
   <thead>
@@ -25,16 +28,16 @@
     <% @links.each do |link| %>
       <% if link.read == false %>
         <tr id="link-<%= link.id %>">
-          <td><%= link.title %></td>
-          <td><%= link.url %></td>
-          <td data-link-id="<%= link.id %>" class="read-status"><%= link.read %></td>
-          <td data-link-id="<%= link.id %>"><button class="mark-as-read">Mark As Read</button></td>
+          <td class="title"><%= link.title %></td>
+          <td class="url"><%= link.url %></td>
+          <td data-link-id="<%= link.id %>" class="read-status no-search"><%= link.read %></td>
+          <td data-link-id="<%= link.id %>"><button class="mark-as-read no-search">Mark As Read</button></td>
       <% else %>
         <tr class="read" id="link-<%= link.id %>">
-          <td><%= link.title %></td>
-          <td><%= link.url %></td>
-          <td data-link-id="<%= link.id %>" class="read-status"><%= link.read %></td>
-          <td data-link-id="<%= link.id %>"><button class="mark-as-unread">Mark As Unread</button></td>
+          <td class="title"><%= link.title %></td>
+          <td class="url"><%= link.url %></td>
+          <td data-link-id="<%= link.id %>" class="read-status no-search"><%= link.read %></td>
+          <td data-link-id="<%= link.id %>"><button class="mark-as-unread no-search">Mark As Unread</button></td>
         <% end %>
         <td><%= link_to "Edit", edit_link_path(link.id) %></td>
       </tr>

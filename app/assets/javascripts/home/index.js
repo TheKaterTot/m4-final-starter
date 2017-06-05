@@ -1,5 +1,6 @@
 $(document).ready(function () {
   $('#new-link').on('submit', addLink)
+  $('#link-search').on('keyup', searchLinks)
 })
 
 function addLink (event) {
@@ -23,5 +24,23 @@ function addLink (event) {
     $('#all-links').prepend($tr)
     $('input[type = "submit"]').removeAttr('disabled')
     $('#new-link form')[0].reset()
+  })
+}
+
+function searchLinks() {
+  let $links = $('#all-links .links')
+  let search = $('#link-search').val().toLowerCase()
+  $links.find('tr').hide()
+  if (search == '') {
+    $links.find('tr').show()
+  }
+
+  let $tds = $links.find('tr td.title, tr td.url')
+
+  $tds.each(function (index, td) {
+    let $td = $(td)
+    if ($td.text().toLowerCase().includes(search)) {
+      $td.parent().show()
+    }
   })
 }
