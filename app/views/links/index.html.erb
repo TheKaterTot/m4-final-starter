@@ -27,7 +27,11 @@
         <td><%= link.title %></td>
         <td><%= link.url %></td>
         <td data-link-id="<%= link.id %>" class="read-status"><%= link.read %></td>
-        <td data-link-id="<%= link.id %>"><button class="mark-as-read">Mark as Read</button></td>
+        <% if link.read == false %>
+          <td data-link-id="<%= link.id %>"><button class="mark-as-read">Mark As Read</button></td>
+        <% else %>
+          <td data-link-id="<%= link.id %>"><button class="mark-as-unread">Mark As Unread</button></td>
+        <% end %>
         <td><%= link_to "Edit", edit_link_path(link.id) %></td>
       </tr>
     <% end %>
