@@ -1,6 +1,8 @@
 $(document).ready(function () {
   $('#new-link').on('submit', addLink)
   $('#link-search').on('keyup', searchLinks)
+  $('#show-read').on('click', showRead)
+  $('#show-unread').on('click', showUnread)
 })
 
 function addLink (event) {
@@ -43,4 +45,15 @@ function searchLinks() {
       $td.parent().show()
     }
   })
+}
+
+function showRead() {
+  let $links = $('#all-links .links')
+  $links.find('tr').hide()
+  $links.find('tr.read').show()
+}
+
+function showUnread() {
+  let $links = $('#all-links .links')
+  $links.find('tr.read').hide()
 }
