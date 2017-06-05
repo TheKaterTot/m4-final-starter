@@ -6,6 +6,7 @@ function markAsRead (e) {
   e.preventDefault()
 
   var linkId = $(this).parent().data('link-id')
+  debugger
 
   $.ajax({
     type: 'PATCH',

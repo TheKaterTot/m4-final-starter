@@ -12,7 +12,7 @@ feature "can mark links as read", :js => :true do
     end
 
     click_on "Mark as Read"
-
+    
     within('.links .read-status') do
       expect(page).to have_text("true")
     end

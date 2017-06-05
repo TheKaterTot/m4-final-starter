@@ -1,5 +1,5 @@
 <h1>Welcome</h1>
-<div class="user-info">
+<div class="user-info pull-right">
   <%= link_to "Sign out", logout_path, method: :delete %>
 </div>
 
@@ -13,7 +13,7 @@
   <% end %>
 </div>
 
-<table id="all-links">
+<table class="table" id="all-links">
   <thead>
     <tr>
       <th>Title</th>
@@ -26,7 +26,8 @@
       <tr id="link-<%= link.id %>">
         <td><%= link.title %></td>
         <td><%= link.url %></td>
-        <td data-link-id="<%= link.id %>" class="read-status"><%= link.read %><button class="mark-as-read">Mark as Read</button></td>
+        <td data-link-id="<%= link.id %>" class="read-status"><%= link.read %></td>
+        <td data-link-id="<%= link.id %>"><button class="mark-as-read">Mark as Read</button></td>
         <td><%= link_to "Edit", edit_link_path(link.id) %></td>
       </tr>
     <% end %>
