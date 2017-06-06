@@ -22,3 +22,9 @@ To set up URLockBox:
 ## Companion
 
 URLockbox's companion app is live at https://rocky-atoll-70277.herokuapp.com/. Hot Reads tracks which links are most popular for the past 24 hours.
+
+## Using the App
+
+Only valid URLs are accepted in URLockbox links. Links are validated using the validate_url gem.
+
+URLockBox can be viewed live at https://dry-caverns-43653.herokuapp.com/. 
