@@ -1,6 +1,8 @@
 # URLockBox
 URLockBox is a Rails 5.0 app that allows users to create and store links.
 
+![alt text](https://user-images.githubusercontent.com/1721599/26842370-cbac40b0-4aa9-11e7-8077-6482fa41bfd9.png)
+
 This app is built with a restful API based on the resource 'link'.
 
 Links marked as 'Top Link' or 'Hot' are dependent on data from a companion app, https://github.com/TheKaterTot/hot_reads, retrieved and compared through a service utilizing Faraday.
