@@ -1,7 +1,9 @@
 # URLockBox
 URLockBox is a Rails 5.0 app that allows users to create and store links.
 
-![Alt text](./Screen Shot 2017-06-06 at 10.35.30 AM.png)
+This app is built with a restful API based on the resource 'link'.
+
+Links marked as 'Top Link' or 'Hot' are dependent on data from a companion app, https://github.com/TheKaterTot/hot_reads, retrieved and compared through a service utilizing Faraday.
 
 ## Setup
 
@@ -15,9 +17,6 @@ To set up URLockBox:
 
     If you already have Firefox and it's on a version more recent than 46, the easiest way to downgrade is to turn off automatic updates, uninstall Firefox, and then install version 46.
 
-## Using the app
+## Companion
 
-
-
-The URLockbox has a companion app, https://rocky-atoll-70277.herokuapp.com/ that tracks
-which links are most popular for the past 24 hours.
+URLockbox's companion app is live at https://rocky-atoll-70277.herokuapp.com/. Hot Reads tracks which links are most popular for the past 24 hours.
