@@ -4,6 +4,7 @@ It uses:
     
     Rails 5.0
     Ruby 2.3.0
+    ES6-style JS
 
 ![alt text](https://user-images.githubusercontent.com/1721599/26842370-cbac40b0-4aa9-11e7-8077-6482fa41bfd9.png)
 
