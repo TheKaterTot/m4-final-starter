@@ -1,5 +1,9 @@
 # URLockBox
-URLockBox is a Rails 5.0 app that allows users to create and store links.
+URLockBox is a Rails app that allows users to create and store links.
+It uses:
+    
+    Rails 5.0
+    Ruby 2.3.0
 
 ![alt text](https://user-images.githubusercontent.com/1721599/26842370-cbac40b0-4aa9-11e7-8077-6482fa41bfd9.png)
 
